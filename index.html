@@ -1,0 +1,190 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Whear-See it Find it Whear it</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="skeleton.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+ <body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <div class="row header">
+      
+      <div class="three columns" style="margin-top: 1%">
+        <a href="#" id="logo"></a>
+      </div>
+        
+      <div  class="nine columns">
+         
+              <ul><!--Dropdown hidden at px width > 690px-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">MENU</a>
+                    <div class="dropdown-content">
+                        <a href="#about">ABOUT</a>
+                        <a href="http://blog.whear.io">BLOG</a>
+                    </div>
+                </li>
+                
+               </ul>
+               
+               <ul class="navbar">
+                 
+                 <li><a href="#about">ABOUT</a></li>
+                 <li><a href="http://blog.whear.io">BLOG</a></li>
+                 
+               </ul>
+          
+      </div>
+    </div>
+      
+   <div class="row main">
+       
+       <div class="one-half column signup" id="mobile">
+            
+            <h5 class="hero-heading">Sign up for an invite to our beta!</h5>
+            
+            <form id="form">
+              <input class="email-box u-full-width" type="email" placeholder="youremail@mailbox.com" id="emailmobile">
+              <input id="send" class="button-primary" type="submit" value="Submit">
+            </form>
+           
+           
+            <p class="frontpage">Whear is here to help you dress better, find your perfect outfit, and show you what&#39s trending anywhere in the world!</p>
+            
+            <p class="frontpage">Keep up with our <a href="http://blog.whear.io" style="text-decoration: underline;">blog</a> to see how Whear will revolutionize fashion!</p>
+            
+        </div>
+       
+        <div class="offset-by-one one-third column phone">
+          <img class="phone-pic" src="images/phone@3x.png">
+        </div>
+        
+        <div class="offset-by-three five column signup-big selected">
+            
+            <h5 class="hero-heading">Sign up for an invite to our beta!</h5>
+            
+            <form id="form">
+              <input class="email-box u-full-width" type="email" placeholder="youremail@mailbox.com" id="emaildt">
+              <input id="send" class="button-primary" type="submit" value="Submit">
+            </form>
+            
+            
+            <p class="frontpage">Whear is here to help you dress better, find your perfect outfit, and show you what&#39s trending anywhere in the world!</p>
+            
+            <p class="frontpage">Keep up with our <a href="http://blog.whear.io" style="text-decoration: underline;">blog</a> to see how Whear will revolutionize fashion!</p>
+        </div>
+        
+    </div>
+      
+    <div  id="about">
+        <h2 class="about">About Whear</h2>
+        <p class="about">Whear was founded with a simple mission: to help people better and feel great about the clothes they are wearing. Over the past several months, we have been building a mobile platform dedicated to that goal. As the fashion industry grows its presence on social media, we believe the time has come for fashion and apparel to have their own platform.</p>
+        <p class="about">Whear will be <em>the </em>social sharing platform for fashion and style. In combining the best features of the most popular social media outlets, we will:</p>
+        <ol class="about">
+          <li>Help you dress better by getting simple feedback on your outfits from people around you</li>
+          <li>Help you discover trends in your area and abroad</li>
+          <li>Give you an easy way to buy clothes you like in other people&#8217;s pictures.</li>
+        </ol>
+        <p class="about">Keep up with our <a href="http://blog.whear.io" style="text-decoration: underline;">blog</a> to see how Whear will revolutionize fashion!</p>
+        <br>
+        <br>
+    </div>
+    
+    <footer>
+      <div>
+        
+         <a href="https://www.facebook.com/wheario">
+        <img title="Facebook" alt="Facebook" src="images/facebookicon.png" width="35" height="35" />
+        </a>
+        
+        <a href="https://twitter.com/wheario">
+        <img title="Twitter" alt="Twitter" src="images/twittericon.png" width="35" height="35" />
+        </a>
+        
+        <a href="mailto:info@whear.io">
+        <img title="Email" alt="Email" src="images/emailicon.png" width="35" height="35" />
+        </a>
+      </div>
+    </footer>
+      
+  </div>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script type="text/javascript">
+            function postToGoogle() {
+                var viewportwidth;
+                if (typeof window.innerWidth !='undefined'){
+                  viewportwidth=window.innerWidth;
+                }
+                console.log(viewportwidth)
+                if (viewportwidth<550){
+                var field1 = $("#emailmobile").val();
+                }else {
+                  var field1=$("#emaildt").val()
+                }
+                console.log(field1)
+                console.log('hello world')
+                
+                $.ajax({
+                    url: "https://docs.google.com/forms/u/0/d/11TDFzQJLlhxsfv9tN29NSCMwxsdzb1ZVIw4Uep-S_Zk/formResponse",
+                    data: {"entry.1180294877": field1},
+                    type: "POST",
+                    dataType: "xml",
+                    statusCode: {
+                        0: function() {
+                            //Success message
+                        },
+                        200: function() {
+                            //Success Message
+                        }
+                    }
+                });
+                
+                
+            }
+            
+            function clear(){
+              document.getElementById("#form").reset();
+            }
+            
+            $(document).ready(function(){
+                $("input[type='submit']").click(function() {
+                    postToGoogle();
+                    alert("Thanks for signing up!");
+                    clear();
+                    return false;
+                });
+            
+            
+            });
+            
+            
+        </script>
+        
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        
+          ga('create', 'UA-83585000-1', 'auto');
+          ga('send', 'pageview');
+        
+        </script>
+  
+</body>
+
+
+
+</html>

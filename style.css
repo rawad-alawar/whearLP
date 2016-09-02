@@ -1,0 +1,219 @@
+<style type="text/css">* {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif; }
+
+/*NavBar*/
+.row.header{
+    display:flex;
+    position: relative;
+    z-index:2;
+}
+
+#logo {
+  float:left;
+  display:block;
+  width: 157px;
+  height: 30px;
+  background: url("images/logo@3x.png") no-repeat ;
+  background-size: contain;
+  
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  
+}
+
+
+li.dropdown {
+    float: right;
+}
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: black;
+    min-width: 77px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    
+}
+
+/*navbar class hidden when display <690px*/
+.navbar{
+  display:none;
+}
+
+@media(min-width:690px){
+  .navbar{
+    display:flex;
+    float: right;
+  }
+}
+
+/*Dropdown Menu bar shows when display is < 690px*/
+li a, .dropbtn {
+    display: inline-block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    width: 45px;
+    height: 14px;
+    font-family: Montserrat;
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 1.7px;
+    color:#000;
+}
+
+@media(min-width:690px){
+ .dropbtn{
+   display:none;
+ }
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/*Sign Up and Phone Picture*/
+
+.signup{
+   margin-top: 0;
+   position: relative;
+   top: 2em;
+   text-align: center;
+  
+}
+
+.signup-big{
+   display:none;
+ 
+}
+
+@media (min-width: 550px) {
+  .signup{
+    display:none;
+  }
+  
+  .signup-big.selected{
+   display:block;
+   margin-top: 0;
+   position: relative;
+   top: 2em;
+   text-align: center;
+  }
+}
+
+@media(min-width:690px){
+  .signup-big.selected{
+    min-width:48%;
+    margin-left: 17.3333333333%;
+  }
+}
+
+@media(min-width:800px){
+  .signup-big.selected{
+    margin-left:8.66667%;
+    max-width: 450px;
+  }
+}
+
+p.frontpage{
+    
+    font-family: 'Montserrat', sans-serif;
+    
+}
+
+.phone{
+  text-align: center;
+}
+.phone-pic{
+    padding:5%;
+    height: 520px;
+    position: relative;
+    width:100%;
+    margin-bottom:2%;
+    max-width:260px;
+   
+}
+
+@media (min-width: 550px) {
+  .phone-pic{
+    min-width:240px;
+    max-width:270px;
+  }
+}
+
+
+p.about{
+    line-height: 150%;
+    margin-bottom:1.5%;
+    
+}
+
+ol.about{
+    margin-bottom:1.5%;
+}
+
+li.about{
+    margin-bottom:.25%;
+}
+
+h2.about{
+    margin-bottom:.5%;
+}
+
+
+
+
+
+.hero-heading{
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 1%;
+    
+}
+
+.main{
+    margin-bottom:2em;
+}
+@media (min-width: 550px) {
+  .main{
+    display:flex;
+  }
+}
+
+
+
+footer {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(200, 200, 200, 0.5);
+    color: gray;
+    font-size: 0.6em;
+}
+
+
+</style>
